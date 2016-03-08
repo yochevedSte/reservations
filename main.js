@@ -1,10 +1,10 @@
 var reservations = {
-  'Aaron': { claimed: false },
+  'Bob': { claimed: false },
 }
 
 var name = prompt('Please enter the name for your reservation');
 
-var addReservation = function () {
+var claimReservation = function () {
   // write your code here
 }
 

@@ -28,8 +28,17 @@ var claimReservation = function () {
   name = (name.toLowerCase());
   name = capitalizeFirstLetter(name);
   if(reservations[name]){
-    if(reservations[name].claimed === true )
+    if(reservations[name].claimed === false ){
       alert("Welcome " + name + " to our restaurant!");
+      reservations[name].claimed = true;
+      for(var i=0;i<table.rows.length; i++){
+        if (table.rows[i].cells[0].innerHTML === name){
+          table.rows[i].cells[1].innerHTML = "yes";
+          break;
+        }
+      }
+
+    }
     else
       alert ("The reservation under the name " + name + " has been claimed");
   }
@@ -38,8 +47,6 @@ var claimReservation = function () {
     reservations[name]= {claimed: true};
     alert("Your reservation was made under the name " + name);
     addReservation(name);
-  
-  
   }
 }
 

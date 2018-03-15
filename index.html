@@ -3,8 +3,37 @@
 <head>
   <title></title>
 </head>
-<body>
+<style>
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 30%;
+      margin-top: 10px;
+  }
+  
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+      background-color: #dddddd;
+  }
+  </style>
+<body onload="loadTable()">
 
+  <div>
+    Enter name for reservation:
+    <input type="text" id="name">
+    <button  onclick="claimReservation()">Submit</button>
+ </div>
+
+<table id="reservationTable">
+  <tr>
+    <th>Name</th>
+    <th>Claimed</th>
+  </tr>
   <script src="main.js"></script>
 </body>
 </html>
